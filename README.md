@@ -56,3 +56,20 @@ The server is intended as a **mock**; run it with `npm run dev` in `server/` whi
 **Client:** TypeScript, React, MobX, Material UI, Axios, Leaflet, react-leaflet, Vite.
 
 **Server:** TypeScript, Express, `ws`, `jsonwebtoken`, `bcrypt`, CORS.
+
+## Possible extensions
+
+The following improvements were intentionally left out to keep the implementation focused and within the scope of the test task. They reflect how the project could evolve in a production scenario.
+
+
+| Area | Idea |
+|------|------|
+| **Auth UX** | Surface **login errors** clearly: wrong password vs network/timeout vs server 500 (map `axios` errors to user-visible messages). |
+| **Lost objects** | **Notifications** when a marker becomes lost: MUI `Snackbar` / toast (“Object `id` lost”), optional **event log** or side panel listing recent losses and removals. |
+| **Connection** | Banner or icon for **WebSocket state** (connecting / connected / reconnecting / failed) so users know why the map stopped updating. |
+| **Config** | Move `localhost` URLs and ports into **`.env`** (`VITE_API_URL`, etc.) for staging and README clarity. |
+| **Map scale** | **Marker clustering** or canvas layer when many markers overlap at low zoom; **search/filter** by id. |
+| **Server mock** | Per-object `removed` or **tombstone** events instead of only full snapshots (closer to real tracking APIs). |
+| **Quality** | Unit tests (e.g. payload parsing, bearing math), basic **E2E** (login → map visible), **a11y** pass on forms and toolbar. |
+
+None of this is required for the test task; treat it as a backlog you can mention in an interview or portfolio write-up.
