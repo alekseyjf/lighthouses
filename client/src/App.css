@@ -1,0 +1,6 @@
+.custom-marker {
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
